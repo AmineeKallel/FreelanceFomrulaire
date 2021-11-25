@@ -37,6 +37,14 @@ function Formulaire() {
                 <div class="card-body">
                    <center> <h2 class="title" style={{marginTop: "-50px"}}>تسجيل معلومات اللاعب</h2></center>
                     <form method="POST">
+
+                  
+                      <center>  <label id="largeFile" for="file">
+    <input type="file" id="file" />
+</label></center>
+<br/><br/>
+
+               
                         <div class="input-group">
                             <input class="input--style-1" type="text" placeholder="الاسم و اللقب " name="name"/>
                         </div>

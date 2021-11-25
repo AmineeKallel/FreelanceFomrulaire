@@ -328,6 +328,10 @@
     color: #666;
     direction: rtl;
   }
+  .filetype {
+ 
+    direction: rtl;
+  }
   .input--style-2 {
     padding: 9px 0;
     color: #666;
@@ -491,4 +495,35 @@
       padding-bottom: 40px;
     }
   }
+  
+label#largeFile:after {
+
+  width: 600px;
+  max-width:600px;
+  content:"ضع صورتك هنا";
+  left:0;
+  right:0;
+  padding:10px 0px 10px 0px;
+  margin-top: 30px;
+
+  text-align:center;
+  padding-bottom: 50;
+  border-radius:10px;
+  border:5px dashed #ccc;
+  color:#ccc;
+  font-family:"Helvetica Neue", Helvetica, Arial;
+  font-size:30px; 
+}
+
+label#largeFile:hover:after {
+  background:#ccc;
+  color:#fff;
+  cursor:pointer;
+}
+
+
+label#largeFile input#file {
+    width: 0px;
+    height: 0px;
+}
   

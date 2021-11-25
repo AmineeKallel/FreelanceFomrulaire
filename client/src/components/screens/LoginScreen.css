@@ -18,6 +18,11 @@ margin-top: -30px;
 
 }
 
+.login-screen__title{
+  color:#e50014
+  ;
+}
+
 .login-screen__form {
   width: 380px;
   padding: 1.5rem;

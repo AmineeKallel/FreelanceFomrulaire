@@ -5,7 +5,10 @@
   justify-content: center;
   align-items: center;
 }
-
+.register-screen__title{
+  color:#e50014
+  ;
+}
 .register-screen__form {
   width: 380px;
   padding: 1.5rem;

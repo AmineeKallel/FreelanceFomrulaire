@@ -53,60 +53,61 @@ const RegisterScreen = ({ history }) => {
   return (
     <div className="register-screen">
       <form onSubmit={registerHandler} className="register-screen__form">
-        <h3 className="register-screen__title">Register</h3>
+      <center>  <div class="card-heading"></div></center>
+        <h3 className="register-screen__title">تسجيل</h3>
         {error && <span className="error-message">{error}</span>}
-        <div className="form-group">
-          <label htmlFor="name">Username:</label>
+        <div className="form-group" style={{direction: "rtl"}}>
+          <label htmlFor="name">اسم المستخدم:</label>
           <input
             type="text"
             required
             id="name"
-            placeholder="Enter username"
+            placeholder="ادخل اسم المستخدم"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
+        <div className="form-group" style={{direction: "rtl"}}>
+          <label htmlFor="email">بريد الالكتروني :</label>
           <input
             type="email"
             required
             id="email"
-            placeholder="Email address"
+            placeholder="بريد الالكتروني"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
+        <div className="form-group" style={{direction: "rtl"}}>
+          <label htmlFor="password">كلمه السر :</label>
           <input
             type="password"
             required
             id="password"
             autoComplete="true"
-            placeholder="Enter password"
+            placeholder="كلمه السر"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="confirmpassword">Confirm Password:</label>
+        <div className="form-group" style={{direction: "rtl"}}>
+          <label htmlFor="confirmpassword">تأكيد كلمة المرور :</label>
           <input
             type="password"
             required
             id="confirmpassword"
             autoComplete="true"
-            placeholder="Confirm password"
+            placeholder="تأكيد كلمة المرور"
             value={confirmpassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
         <button type="submit" className="btn btn-primary">
-          Register
+        تسجيل
         </button>
 
-        <span className="register-screen__subtext">
-          Already have an account? <Link to="/login">Login</Link>
+        <span className="register-screen__subtext" style={{direction: "rtl"}}>
+        هل لديك حساب؟ <Link to="/login">تسجيل الدخول</Link>
         </span>
       </form>
     </div>
