@@ -43,26 +43,28 @@ const LoginScreen = ({ history }) => {
 
   return (
     <div className="login-screen">
+      
       <form onSubmit={loginHandler} className="login-screen__form">
-        <h3 className="login-screen__title">Login</h3>
+    <center>  <div class="card-heading"></div></center>
+        <h3 className="login-screen__title">تسجيل الدخول</h3>
         {error && <span className="error-message">{error}</span>}
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
+        <div className="form-group" style={{direction: "rtl"}}>
+          <label htmlFor="email" >البريد الإلكتروني</label>
           <input
             type="email"
             required
             id="email"
-            placeholder="Email address"
+            placeholder="البريد الإلكتروني"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             tabIndex={1}
           />
         </div>
-        <div className="form-group">
+        <div className="form-group" style={{direction: "rtl"}}>
           <label htmlFor="password">
-            Password:{" "}
+          كلمة السر:{" "}
             <Link to="/forgotpassword" className="login-screen__forgotpassword">
-              Forgot Password?
+            هل نسيت كلمة السر؟
             </Link>
           </label>
           <input
@@ -70,18 +72,21 @@ const LoginScreen = ({ history }) => {
             required
             id="password"
             autoComplete="true"
-            placeholder="Enter password"
+            placeholder="كلمة السر"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
             tabIndex={2}
           />
         </div>
         <button type="submit" className="btn btn-primary ">
-          Login 
+        تسجيل الدخول
+ 
         </button>
 
-        <span className="login-screen__subtext">
-          Don't have an account? <Link to="/register">Register</Link>
+        <span className="login-screen__subtext" style={{direction: "rtl"}}>
+        ليس لديك حساب؟ <Link to="/register">
+          إنشاء حساب لك  
+        </Link>
         </span>
       </form>
     </div>

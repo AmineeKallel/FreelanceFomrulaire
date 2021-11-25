@@ -2,6 +2,8 @@ import React, { PropTypes,rou } from 'react';
 import { useHistory } from "react-router-dom";
 import './formulaire.css';
 import { useState, useEffect } from "react";
+import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
+
 
 
 function Formulaire() {
@@ -22,96 +24,87 @@ function Formulaire() {
    
   };
   return (
-    
-    <div className="form-container">
-      
-      <button className="form-field" type="submit" onClick={logoutHandler}>
-      Logout
-      </button>
-    <form className="register-form">
-
-    <input
- 
-        id="image"
-        className="form-field"
-        type="text"
-        placeholder="image "
-        name="image"
-      />
-   
-      <input
-        id="first-name"
-        className="form-field"
-        type="text"
-        placeholder="الاسم و اللقب "
-        name="firstName"
-      />
-
-<input
-        id="birthday"
-        className="form-field"
-        type="text"
-        placeholder="تاريخ الولادة"
-        name="birthday"
-      />
-
-<input
-        id="club"
-        className="form-field"
-        type="text"
-        placeholder="الجمعية/النادي"
-        name="club"
-      />
-
-<input
-        id="sexe"
-        className="form-field"
-        type="text"
-        placeholder="الجنس"
-        name="sexe"
-      />
-
-
-
-<input
-        id="nombre_licence"
-        className="form-field"
-        type="text"
-        placeholder="عدد الاجازة"
-        name="nombre_licence"
-      />
-
-<input
-        id="classe"
-        className="form-field"
-        type="text"
-        placeholder="الصنف"
-        name="classe"
-      />
-
-<input
-        id="specialite"
-        className="form-field"
-        type="text"
-        placeholder="الإختصاص"
-        name="specialite"
-      />
-
-<input
-        id="ligue"
-        className="form-field"
-        type="text"
-        placeholder="الرابطة"
-        name="ligue"
-      />
-     
-      <button className="form-field" type="submit">
-      imprimer le badge
-      </button>
-    </form>
-  </div>
+    <>
+         
   
+   <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+              <button className="btn btn--radius btn--logout" type="submit" onClick={logoutHandler}>
+              تسجيل خروج
+      </button>
+        <div class="wrapper wrapper--w680">
+            <div class="card card-1">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                   <center> <h2 class="title" style={{marginTop: "-50px"}}>تسجيل معلومات اللاعب</h2></center>
+                    <form method="POST">
+                        <div class="input-group">
+                            <input class="input--style-1" type="text" placeholder="الاسم و اللقب " name="name"/>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-1 js-datepicker" type="date" placeholder="BIRTHDATE" name="birthday"/>
+                                    <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="gender" class="input--style-2" style={{width: "220px", marginTop: "15px"}}>
+                                            <option disabled="disabled" selected="selected">الجنس</option>
+                                            <option>ذكر</option>
+                                            <option>أنثى</option>
+                                     
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        <div class="input-group">
+                            <input class="input--style-1" type="text" placeholder=" الجمعية/النادي  " name="name"/>
+                        </div>
+                   
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-1" type="text" placeholder="عدد الاجازة " name="res_code"/>
+                                </div>
+                            </div> 
+                              <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-1" type="text" placeholder="الصنف" name="res_code"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-1" type="text" placeholder="الإختصاص " name="res_code"/>
+                                </div>
+                            </div> 
+                              <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-1" type="text" placeholder="الرابطة" name="res_code"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-t-20">
+                            <button class="btn btn--radius btn--red" type="submit">تسجيل</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+    
+  </>
   );
+  
 }
 
 export default Formulaire;
