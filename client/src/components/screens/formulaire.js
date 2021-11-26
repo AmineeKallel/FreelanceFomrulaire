@@ -36,22 +36,22 @@ function Formulaire() {
                 <div class="card-heading"></div>
                 <div class="card-body">
                    <center> <h2 class="title" style={{marginTop: "-50px"}}>تسجيل معلومات اللاعب</h2></center>
-                    <form method="POST">
+                    <form method="POST"  action="/api/addPlayer" enctype="multipart/form-data">
 
                   
-                      <center>  <label id="largeFile" for="file">
-    <input type="file" id="file" />
+                      <center>  <label id="largeFile" for="file" >
+    <input type="file" id="file" name="file" accept="image/*" />
 </label></center>
 <br/><br/>
 
                
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="الاسم و اللقب " name="name"/>
+                            <input class="input--style-1" type="text" placeholder="الاسم و اللقب " name="name" required/>
                         </div>
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <input class="input--style-1 js-datepicker" type="date" placeholder="BIRTHDATE" name="birthday"/>
+                                    <input class="input--style-1 js-datepicker" type="date" placeholder="BIRTHDATE" name="birthday" required/>
                                     <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                 </div>
                             </div>
@@ -60,8 +60,8 @@ function Formulaire() {
                                     <div class="rs-select2 js-select-simple select--no-search">
                                         <select name="gender" class="input--style-2" style={{width: "220px", marginTop: "15px"}}>
                                             <option disabled="disabled" selected="selected">الجنس</option>
-                                            <option>ذكر</option>
-                                            <option>أنثى</option>
+                                            <option value="ذكر">ذكر</option>
+                                            <option value="أنثى">أنثى</option>
                                      
                                         </select>
                                         <div class="select-dropdown"></div>
@@ -71,30 +71,30 @@ function Formulaire() {
                         </div>
                       
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder=" الجمعية/النادي  " name="name"/>
+                            <input class="input--style-1" type="text" placeholder=" الجمعية/النادي  " name="equipe" required/>
                         </div>
                    
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <input class="input--style-1" type="text" placeholder="عدد الاجازة " name="res_code"/>
+                                    <input class="input--style-1" type="text" placeholder="عدد الاجازة " name="lic" required/>
                                 </div>
                             </div> 
                               <div class="col-2">
                                 <div class="input-group">
-                                    <input class="input--style-1" type="text" placeholder="الصنف" name="res_code"/>
+                                    <input class="input--style-1" type="text" placeholder="الصنف" name="classe" required/>
                                 </div>
                             </div>
                         </div>
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <input class="input--style-1" type="text" placeholder="الإختصاص " name="res_code"/>
+                                    <input class="input--style-1" type="text" placeholder="الإختصاص " name="specialite" required/>
                                 </div>
                             </div> 
                               <div class="col-2">
                                 <div class="input-group">
-                                    <input class="input--style-1" type="text" placeholder="الرابطة" name="res_code"/>
+                                    <input class="input--style-1" type="text" placeholder="الرابطة" name="division" required/>
                                 </div>
                             </div>
                         </div>

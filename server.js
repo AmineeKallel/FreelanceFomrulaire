@@ -7,6 +7,8 @@ const errorHandler = require("./middleware/error");
 connectDB();
 
 app.use(express.json());
+app.use(express.static('badges'));
+
 
 app.get("/", (req, res, next) => {
   res.send("Api running");
@@ -15,6 +17,7 @@ app.get("/", (req, res, next) => {
 // Connecting Routes
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/private", require("./routes/private"));
+app.use("/api/addPlayer", require("./routes/participant"));
 
 // Error Handler Middleware
 app.use(errorHandler);
