@@ -38,11 +38,8 @@ function Formulaire() {
                    <center> <h2 class="title" style={{marginTop: "-50px"}}>تسجيل معلومات اللاعب</h2></center>
                     <form method="POST"  action="/api/addPlayer" enctype="multipart/form-data">
 
-                  
-                      <center>  <label id="largeFile" for="file" >
-    <input type="file" id="file" name="file" accept="image/*" />
-</label></center>
-<br/><br/>
+            
+
 
                
                         <div class="input-group">
@@ -96,9 +93,17 @@ function Formulaire() {
                                 <div class="input-group">
                                     <input class="input--style-1" type="text" placeholder="الرابطة" name="division" required/>
                                 </div>
+           
+
+
                             </div>
+                            
                         </div>
-                        
+                        <br/><br/>         
+           <center>  <label id="largeFile" for="file" >
+    <input type="file" id="file" name="file" accept="image/*" />
+</label></center>
+<br/><br/>
                         <div class="p-t-20">
                             <button class="btn btn--radius btn--red" type="submit">تسجيل</button>
                         </div>

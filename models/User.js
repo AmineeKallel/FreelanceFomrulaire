@@ -6,23 +6,31 @@ const jwt = require("jsonwebtoken");
 const UserSchema = new mongoose.Schema({
   username: {
     type: String,
-    required: [true, "Please provide username"],
+    required: [true, "يرجى تقديم اسم المستخدم "],
   },
   email: {
     type: String,
-    required: [true, "Please provide email address"],
+    required: [true, "يرجى تقديم عنوان البريد الإلكتروني"],
     unique: true,
     match: [
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-      "Please provide a valid email",
+      "يرجى تقديم عنوان بريد إلكتروني صالح",
     ],
   },
   password: {
     type: String,
-    required: [true, "Please add a password"],
+    required: [true, "الرجاء إضافة كلمة مرور"],
     minlength: 6,
     select: false,
   },
+
+  issuperadmin:{type: Boolean, default: false},
+
+  isadmin:{type: Boolean, default: false},
+
+
+
+
   resetPasswordToken: String,
   resetPasswordExpire: Date,
 });
