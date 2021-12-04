@@ -24,9 +24,10 @@ const UserSchema = new mongoose.Schema({
     select: false,
   },
 
-  issuperadmin:{type: Boolean, default: false},
-
-  isadmin:{type: Boolean, default: false},
+  role: {
+type:Number,
+default:0,
+  },
 
 
 

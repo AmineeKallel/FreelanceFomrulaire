@@ -32,8 +32,9 @@ if(files.file.originalFilename!=""){
         if (err) throw err;
         badge.badge(nom,date,equipe,specialite,id,newpath, function(imagefinal) {
           console.log(req.headers.host)
-          
-          res.redirect("http://"+req.headers.host+"/"+id+".png")
+         const x = req.headers.host.substring(0,10)
+         console.log("x="+x)
+          res.redirect("http://"+x+"3000/impression/"+id)
         })
         
       });
@@ -50,7 +51,7 @@ if(files.file.originalFilename!=""){
           badge.badge(nom,date,equipe,specialite,id,newpath, function(imagefinal) {
             console.log(req.headers.host)
             
-            res.redirect("http://"+req.headers.host+"/"+id+".png")
+            res.redirect("http://"+req.headers.host+"/impression/"+id)
           })
         }
         

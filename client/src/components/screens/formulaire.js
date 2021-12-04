@@ -1,12 +1,32 @@
 import React, { PropTypes,rou } from 'react';
 import { useHistory } from "react-router-dom";
 import './formulaire.css';
-import { useState, useEffect } from "react";
+import { useState, useEffect,useRef } from "react";
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
+import { height, width } from 'dom-helpers';
 
-
-
+ 
 function Formulaire() {
+    
+    const [url, setUrl] = useState("");
+    const inputEl = useRef(null);
+    function handleChange(event) {
+        var file = inputEl.current.files[0];
+        console.log(file.name)
+        var reader = new FileReader();
+        reader.onload = function(event) {
+            setUrl(event.target.result)
+          };
+        
+        reader.readAsDataURL(file);
+        
+         
+     
+        
+      }
+  
+      
+  
   const [error, setError] = useState("");
   let history=useHistory();
   const logoutHandler = async (e) => {
@@ -23,6 +43,7 @@ function Formulaire() {
     }
    
   };
+  
   return (
     <>
          
@@ -93,17 +114,24 @@ function Formulaire() {
                                 <div class="input-group">
                                     <input class="input--style-1" type="text" placeholder="الرابطة" name="division" required/>
                                 </div>
-           
-
+                                </div>
+                                <div class="col-2">
+                              
+                              <center>  <img src={url} class="img-thumbnail" alt=""  style={{width:500}}/></center>
 
                             </div>
                             
                         </div>
                         <br/><br/>         
            <center>  <label id="largeFile" for="file" >
-    <input type="file" id="file" name="file" accept="image/*" />
+    <input type="file" id="file" name="file" accept="image/*"   ref={inputEl} onChange={handleChange}        
+/>
+
 </label></center>
+
 <br/><br/>
+
+
                         <div class="p-t-20">
                             <button class="btn btn--radius btn--red" type="submit">تسجيل</button>
                         </div>
