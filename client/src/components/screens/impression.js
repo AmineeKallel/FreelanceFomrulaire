@@ -5,6 +5,10 @@ import { useState, useEffect } from "react";
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
 
 
+
+
+
+
 function Impression() {
   let { id } = useParams();
   console.log("aaaaaaaaaaa"+id)
@@ -22,8 +26,19 @@ function Impression() {
         setError("");
       }, 5000);
     }
+    
    
   };
+  var windowObjectReference;
+
+  function openRequestedPopup() {
+    windowObjectReference = window.print(
+      "http://localhost:5000/"+id+".png",
+      "DescriptiveWindowName",
+      "resizable,scrollbars,status"
+    );
+  }
+  
   return (
     <>
          
@@ -55,7 +70,8 @@ function Impression() {
 
 
                         <div class="p-t-20">
-                            <button class="btn btn--radius btn--red" type="submit">طباعة</button>
+                            <button class="btn btn--radius btn--red"onClick={()=>window.print()} >طباعة</button>
+                         
                         </div>
                     </form>
                 </div>
