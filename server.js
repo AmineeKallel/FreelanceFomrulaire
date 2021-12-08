@@ -18,6 +18,8 @@ app.get("/", (req, res, next) => {
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/private", require("./routes/private"));
 app.use("/api/addPlayer", require("./routes/participant"));
+app.use("/api/impression",require("./routes/impression"));
+app.use("/api/adminImpression",require("./routes/adminImpression"));
 
 // Error Handler Middleware
 app.use(errorHandler);

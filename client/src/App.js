@@ -10,6 +10,8 @@ import RegisterScreen from "./components/screens/RegisterScreen";
 import ForgotPasswordScreen from "./components/screens/ForgotPasswordScreen";
 import ResetPasswordScreen from "./components/screens/ResetPasswordScreen";
 import Impression from "./components/screens/impression";
+import Admin from "./components/screens/AdminScreen";
+import adminaddplayer from "./components/screens/adminaddplayer";
 
 const App = () => {
   return (
@@ -20,6 +22,8 @@ const App = () => {
           <Route exact path="/login" component={LoginScreen} />
           <Route exact path="/register" component={RegisterScreen} />
           <Route exact path="/impression/:id" component={Impression} />
+          <Route exact path="/admin" component={Admin} />
+          <Route exact path="/adminaddplayer" component={adminaddplayer} />
           <Route
             exact
             path="/forgotpassword"

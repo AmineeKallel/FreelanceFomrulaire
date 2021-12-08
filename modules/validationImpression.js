@@ -1,7 +1,6 @@
 const XLSX=require("xlsx-js-style");
 const fs = require('fs');
-var excel=function(nom,date_naissance,equipe,sexe,lic,classe,specialite,division){
-var num;
+var validationImpression=function(id){
 var workbook = XLSX.readFile(__dirname+"/list.xlsx",{"cellStyles":true});
 var sheet = workbook.Sheets["Feuil1"];
 
@@ -159,19 +158,13 @@ for(i=8;i<500;i++){
 }
 i=9;
 
-while(sheet["C"+i].v!=" "){
+while(sheet["B"+i].v!=id){
 i++
+
 }
-num=sheet["B"+i];
-sheet["C"+i].v=nom
-sheet["D"+i].v=date_naissance
-sheet["E"+i].v=equipe
-sheet["F"+i].v=sexe
-sheet["G"+i].v=lic
-sheet["H"+i].v=classe
-sheet["I"+i].v=specialite
-sheet["J"+i].v=division
-sheet["K"+i].v="لا"
+
+sheet["K"+i].v="نعم"
+
 sheet["B2"].s={
 	"font":{name:"Arial",
 		sz:40,
@@ -190,6 +183,7 @@ sheet["B2"].s={
 		bgColor: { indexed: 64 }
 	  }
 }
+
 sheet1=workbook.Sheets["Feuil2"]
 sheet1["O7"].s={
 	"font":{name:"Calibri",
@@ -225,7 +219,9 @@ for(i=8;i<13;i++){
 		}
 	}
 }
+
 sheet1["H5"].v=" ";
+
 sheet1["H5"].t="s";
 sheet1["H5"].s={
 	"font":{name:"Andalus",
@@ -368,6 +364,6 @@ for(i=2;i<7;i++){
 }
 
 XLSX.writeFile(workbook,__dirname+"/list.xlsx")
-return num.v;}
+return "ok";}
 
-module.exports.excel=excel;
+module.exports.impression=validationImpression;

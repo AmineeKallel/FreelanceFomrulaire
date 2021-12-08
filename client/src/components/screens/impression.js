@@ -19,6 +19,7 @@ function Impression() {
     try {
 
       localStorage.removeItem("authToken");
+      history.push("/")
       window.location.reload(false);
     } catch (error) {
       setError(error);
@@ -52,7 +53,7 @@ function Impression() {
                 <div class="card-heading"></div>
                 <div class="card-body">
                    <center> <h2 class="title" style={{marginTop: "-50px"}}></h2></center>
-                    <form method="POST"  action="/api/addPlayer" enctype="multipart/form-data">
+                    <form method="POST"  action="/api/impression" >
 
             
 
@@ -65,12 +66,10 @@ function Impression() {
                   
                        
                    
-                   
-              
-
+                   <input type="hidden" name="id" value={id}/>
 
                         <div class="p-t-20">
-                            <button class="btn btn--radius btn--red"onClick={()=>window.print()} >طباعة</button>
+                            <button class="btn btn--radius btn--red" type="submit">طباعة</button>
                          
                         </div>
                     </form>

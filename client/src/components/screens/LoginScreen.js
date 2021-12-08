@@ -7,6 +7,8 @@ const LoginScreen = ({ history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [role, setRole] = useState("");
+
 
   useEffect(() => {
     if (localStorage.getItem("authToken")) {
@@ -16,7 +18,7 @@ const LoginScreen = ({ history }) => {
 
   const loginHandler = async (e) => {
     e.preventDefault();
-
+    
     const config = {
       header: {
         "Content-Type": "application/json",
@@ -26,13 +28,21 @@ const LoginScreen = ({ history }) => {
     try {
       const { data } = await axios.post(
         "/api/auth/login",
-        { email, password },
+        { email, password, role },
         config
       );
 
       localStorage.setItem("authToken", data.token);
-
-      history.push("/");
+        console.log(data.role)
+        
+        if(data.role==1){
+          history.push("/admin")
+        }
+        else{
+          history.push("/")
+        }
+        
+      //history.push("/");
     } catch (error) {
       setError(error.response.data.error);
       setTimeout(() => {
@@ -63,9 +73,7 @@ const LoginScreen = ({ history }) => {
         <div className="form-group" style={{direction: "rtl"}}>
           <label htmlFor="password">
           كلمة السر:{" "}
-            <Link to="/forgotpassword" className="login-screen__forgotpassword">
-            هل نسيت كلمة السر؟
-            </Link>
+           
           </label>
           <input
             type="password"

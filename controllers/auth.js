@@ -5,7 +5,7 @@ const sendEmail = require("../utils/sendEmail");
 
 // @desc    Login user
 exports.login = async (req, res, next) => {
-  const { email, password } = req.body;
+  const { email, password, role } = req.body;
 
   // Check if email and password is provided
   if (!email || !password) {
@@ -14,7 +14,8 @@ exports.login = async (req, res, next) => {
 
   try {
     // Check that user exists by email
-    const user = await User.findOne({ email }).select("+password");
+    const user = await User.findOne({ email  }).select("+password");
+    console.log(user);
 
     if (!user) {
       return next(new ErrorResponse("Invalid credentials", 401));
@@ -24,7 +25,7 @@ exports.login = async (req, res, next) => {
     const isMatch = await user.matchPassword(password);
 
     if (!isMatch) {
-      return next(new ErrorResponse("Invalid credentials", 401));
+      return next(new ErrorResponse("بيانات  غير صالحة ", 401));
     }
 
     sendToken(user, 200, res);
@@ -35,13 +36,14 @@ exports.login = async (req, res, next) => {
 
 // @desc    Register user
 exports.register = async (req, res, next) => {
-  const { username, email, password } = req.body;
+  const { username, email, password, role } = req.body;
 
   try {
     const user = await User.create({
       username,
       email,
       password,
+      role,
     });
 
     sendToken(user, 200, res);
@@ -136,5 +138,5 @@ exports.resetPassword = async (req, res, next) => {
 
 const sendToken = (user, statusCode, res) => {
   const token = user.getSignedJwtToken();
-  res.status(statusCode).json({ sucess: true, token });
+  res.status(statusCode).json({ sucess: true, token, role : user.role });
 };
