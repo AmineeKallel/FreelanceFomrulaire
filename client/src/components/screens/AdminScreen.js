@@ -4,6 +4,7 @@ import './formulaire.css';
 import { useState, useEffect,useRef } from "react";
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
 import { height, width } from 'dom-helpers';
+import './adminscreen.css';
 
  
 function Formulaire() {
@@ -45,11 +46,39 @@ function Formulaire() {
    
   };
 
+  const downloadxls = async (e) => {
+    e.preventDefault();
+    try {   
+      history.push("/downloadxls")
+      window.location.reload(false);
+    } catch (error) {
+      setError(error);
+      setTimeout(() => {
+        setError("");
+      }, 5000);
+    }
+   
+  };
+
 
   const addplayeradmin = async (e) => {
     e.preventDefault();
     try {   
       history.push("/adminaddplayer")
+      window.location.reload(false);
+    } catch (error) {
+      setError(error);
+      setTimeout(() => {
+        setError("");
+      }, 5000);
+    }
+   
+  };
+
+  const adminrecherche = async (e) => {
+    e.preventDefault();
+    try {   
+      history.push("/adminrecherche")
       window.location.reload(false);
     } catch (error) {
       setError(error);
@@ -68,8 +97,15 @@ function Formulaire() {
    <button className="btn btn--radius btn--logout" type="submit" onClick={logoutHandler}>
               تسجيل خروج
       </button>
-      <button className="btn btn--radius btn--logout"  style={{ marginRight: "1340px"}} type="submit" onClick={addplayeradmin}>
-      إضافة لاعب      </button>
+
+
+      
+      
+    
+      
+     
+      
+      
         <div class="wrapper wrapper--w680">
             <div class="card card-1">
                 <div class="card-heading"></div>

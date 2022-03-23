@@ -20,6 +20,8 @@ app.use("/api/private", require("./routes/private"));
 app.use("/api/addPlayer", require("./routes/participant"));
 app.use("/api/impression",require("./routes/impression"));
 app.use("/api/adminImpression",require("./routes/adminImpression"));
+app.use("/api/adminrecherche",require("./routes/adminrecherche"));
+app.use("/api/downloadxls",require("./routes/downloadxls"));
 
 // Error Handler Middleware
 app.use(errorHandler);

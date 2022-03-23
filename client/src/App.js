@@ -12,6 +12,10 @@ import ResetPasswordScreen from "./components/screens/ResetPasswordScreen";
 import Impression from "./components/screens/impression";
 import Admin from "./components/screens/AdminScreen";
 import adminaddplayer from "./components/screens/adminaddplayer";
+import adminrecherche from "./components/screens/adminrecherche";
+import downloadxls from "./components/screens/downloadxls";
+import adminmenu from "./components/screens/adminmenu";
+
 
 const App = () => {
   return (
@@ -24,6 +28,11 @@ const App = () => {
           <Route exact path="/impression/:id" component={Impression} />
           <Route exact path="/admin" component={Admin} />
           <Route exact path="/adminaddplayer" component={adminaddplayer} />
+          <Route exact path="/adminrecherche" component={adminrecherche} />
+          <Route exact path="/downloadxls" component={downloadxls} />
+          <Route exact path="/adminmenu" component={adminmenu} />
+         
+          
           <Route
             exact
             path="/forgotpassword"

@@ -27,7 +27,6 @@ var id=excel.excel(nom,date_naissance,equipe,sexe,lic,classe,specialite,division
 if(files.file.originalFilename!=""){
         var oldpath = files.file.filepath;
       var newpath = 'uploads/' + id+'.jpg';
-     
       mv(oldpath, newpath, function (err) {
         if (err) throw err;
         badge.badge(nom,date,equipe,specialite,id,newpath, function(imagefinal) {

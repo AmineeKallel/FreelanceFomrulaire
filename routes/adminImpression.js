@@ -10,14 +10,17 @@ router.post("/",(req,res,next)=>{
         var id2=parseInt(fields.id2);
 
     var dir=__dirname
+   
 dir=dir.substring(0,dir.indexOf("routes"))
-
     const pages = [];
     for(var id=id1;id<=id2;id++){
-        pages.push(dir+"/badges/"+id+".png");
+        pages.push(dir+"/badges/"+id+"_resized.png");
+        console.log(id)
     }
     res.setHeader('Content-Type', 'application/pdf');
+  
 res.setHeader('Content-Disposition', 'attachment; filename='+id+'.pdf');
+
     imgToPDF(pages, 'BADGE').pipe(res);
    
   

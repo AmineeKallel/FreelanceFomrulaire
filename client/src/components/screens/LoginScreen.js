@@ -36,7 +36,7 @@ const LoginScreen = ({ history }) => {
         console.log(data.role)
         
         if(data.role==1){
-          history.push("/admin")
+          history.push("/adminmenu")
         }
         else{
           history.push("/")

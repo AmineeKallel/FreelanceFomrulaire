@@ -1,0 +1,29 @@
+.bouton-continuer {
+    border: none !important;
+    border-radius: 6px !important;
+    color: white !important;
+    height: 39px !important;
+    width: 160px !important;
+    text-transform: none;
+    display: inline-block;
+    cursor: pointer !important;
+    font-size: 14px !important;
+    font-family: Muli-Bold;
+    line-height: 19px;
+    background: #ca1221  !important;
+    bottom: -1px;
+    margin: 13px 12px 12px 10px;
+      
+  }
+
+  .text {
+    top: 518px;
+    left: 146px;
+    width: 100px;
+    height: 19px;
+    text-align: center;
+    font: normal normal bold 16px/19px Montserrat;
+    letter-spacing: 0px;
+    color: #ffffff;
+    opacity: 1;
+  }

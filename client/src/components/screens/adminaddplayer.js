@@ -68,8 +68,7 @@ function Formulaire() {
               <button className="btn btn--radius btn--logout" type="submit" onClick={logoutHandler}>
               تسجيل خروج
       </button>
-      <button className="btn btn--radius btn--logout"  style={{ marginRight: "1340px"}} type="submit" onClick={addplayeradmin}>
-      طباعة      </button>
+      
         <div class="wrapper wrapper--w680">
             <div class="card card-1">
                 <div class="card-heading"></div>

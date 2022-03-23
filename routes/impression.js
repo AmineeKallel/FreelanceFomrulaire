@@ -13,15 +13,13 @@ router.post("/",(req,res,next)=>{
     var dir=__dirname
 dir=dir.substring(0,dir.indexOf("routes"))
     const pages = [dir+"/badges/"+id+".png"];
+ 
     res.setHeader('Content-Type', 'application/pdf');
 res.setHeader('Content-Disposition', 'attachment; filename='+id+'.pdf');
     imgToPDF(pages, 'BADGE').pipe(res);
-   
-  
+
     })
     
-    
-
 
 })
 
